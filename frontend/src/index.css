@@ -24,7 +24,7 @@
   background-color: white;
 }
 
-.genderSelect {
+.Select {
   background-color: white;
   position: relative;
   height: 100%;
@@ -33,12 +33,12 @@
   transition: opacity 2s ease;
 }
 
-.genderSelect.fade-in {
+.Select.fade-in {
   opacity: 1;
   transition: opacity 2s ease;
 }
 
-.genderSelect img {
+.Select img {
   background-color: white;
   height: 186px;
   width: 134px;
@@ -60,7 +60,7 @@
   border: 2px solid black;
 }
 
-.genderSelect .chosen {
+.Select .chosen {
   position: absolute;
   transform: translate(100%, 0%); /* Initial position */
   transition: transform 0.5s ease; /* Only transition the transform property */
@@ -110,6 +110,27 @@
   font-size: 40px;
   width: auto;
   padding: 5px;
+}
+
+.leftImg {
+  position: absolute;
+  top: 35%;
+  left: 15%;
+  height: 140px !important;
+}
+
+.middleImg {
+  position: absolute;
+  top: 35%;
+  left: 40%;
+  height: 140px !important;
+}
+
+.rightImg {
+  position: absolute;
+  top: 35%;
+  left: 60%;
+  height: 140px !important;
 }
 
 .submit {

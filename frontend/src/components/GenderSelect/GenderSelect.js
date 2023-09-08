@@ -42,7 +42,7 @@ export default function GenderSelect({setCharacter, setMessageFinished, setQuest
   }, [option])
 
   return (
-    <div className={`genderSelect ${fadeIn ? "fade-in" : ""}`}>
+    <div className={`Select ${fadeIn ? "fade-in" : ""}`}>
       <img src="TrainerM.png" className={
         `trainerM 
         ${option === 1 && gender === "" ? "selected" : ""} 

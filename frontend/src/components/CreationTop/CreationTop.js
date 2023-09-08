@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import GenderSelect from "../GenderSelect/GenderSelect";
 import NameSelect from "../NameSelect/NameSelect";
+import PokemonSelect from "../PokemonSelect/PokemonSelect";
 
 export default function CreationTop({character, setCharacter, question, messageFinished, setMessageFinished, setQuestion}) {
   const [genderQ, setGenderQ] = useState(false);
   const [nameQ, setNameQ] = useState(false)
+  const [pokemonQ, setPokemonQ] = useState(false)
 
   useEffect(() => {
     if (question === 3 && messageFinished) {
@@ -26,7 +28,22 @@ export default function CreationTop({character, setCharacter, question, messageF
         setGenderQ(false)
         setNameQ(true)
     }
-  })
+  }, [messageFinished])
+
+  useEffect(() => {
+    if (question === 9 && messageFinished) {
+      setMessageFinished(false)
+      setNameQ(false)
+      setPokemonQ(true)
+    }
+  }, [messageFinished])
+
+  useEffect(() => {
+    if (question === 9 && !messageFinished && pokemonQ) {
+        setMessageFinished(true)
+        setQuestion(9.1)
+    }
+  }, [messageFinished])
 
   return (
     <div className="creationTop">
@@ -40,6 +57,11 @@ export default function CreationTop({character, setCharacter, question, messageF
         setNameQ={setNameQ}
         setCharacter={setCharacter}
         setQuestion={setQuestion}
+        />}
+        {pokemonQ && <PokemonSelect 
+        setCharacter = {setCharacter} 
+        setMessageFinished = {setMessageFinished} 
+        setQuestion = {setQuestion}
         />}
     </div>
   );
